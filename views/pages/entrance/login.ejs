@@ -1,0 +1,30 @@
+<div id="login" v-cloak>
+  <div class="container">
+    <h1 class="text-center">INICIA SESION</h1>
+    <hr/>
+    <div class="login-form-container">
+        <p class="text-center">¡Entra! Es hora de compartir o prestar cosas con tus amigos.</p>
+      <ajax-form action="login" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+        <div class="form-group">
+          <input type="email" class="form-control" autofocus placeholder="Correo Electronico" :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress">
+          <div class="invalid-feedback" v-if="formErrors.emailAddress">Por favor ingresa una direccion valida.</div>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Contraseña" :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password">
+          <div class="invalid-feedback" v-if="formErrors.password">Por favor ingresa tu contraseña.</div>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="remember" name="rememberMe" v-model="formData.rememberMe"/>
+          <label for="remember">Recuerdame</label>
+        </div>
+        <p class="text-danger" v-if="cloudError==='badCombo'"><small>Las credenciales que ingresó no están asociadas a una cuenta. Por favor, revise su correo electrónico o contraseña y vuelva a intentarlo.</small></p>
+        <p class="text-danger" v-else-if="cloudError"><small>Se produjo un error al procesar su solicitud. Verifique su información y vuelva a intentarlo, o <a href="/contact">contacte a soporte</a> si el error persiste.</small></p>
+        <div class="form-group">
+          <ajax-button :syncing="syncing" class="btn-dark btn-lg btn-block">Entrar</ajax-button>
+        </div>
+      </ajax-form>
+      <p class="text-center"><a href="/password/forgot">Has olvidado tu contraseña?</a></p>
+    </div>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
