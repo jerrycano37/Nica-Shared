@@ -9,20 +9,20 @@
     "connect-redis": "3.2.0",
     "lodash": "3.10.1",
     "moment": "^2.19.3",
-    "sails": "^1.0.0-44",
-    "sails-hook-apianalytics": "^2.0.0",
-    "sails-hook-organics": "^0.13.0",
-    "sails-hook-orm": "^2.0.0-16",
-    "sails-hook-sockets": "^1.5.2-0",
+    "sails": "1.0.0-44",
+    "sails-hook-apianalytics": "2.0.0",
+    "sails-hook-organics": "0.13.0",
+    "sails-hook-orm": "2.0.0-16",
+    "sails-hook-sockets": "1.5.2-0",
     "sails-hook-uploads": "^0.1.1",
-    "sails-mysql": "^1.0.0-15",
-    "skipper-s3": "^0.5.9",
+    "sails-mysql": "1.0.0-15",
+    "skipper-s3": "0.5.9",
     "socket.io-redis": "5.2.0"
   },
   "devDependencies": {
     "eslint": "4.11.0",
     "grunt": "1.0.1",
-    "sails-hook-grunt": "^3.0.2"
+    "sails-hook-grunt": "3.0.2"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
